@@ -3,6 +3,7 @@ import 'package:online_shop/components/custom_suffix_icon.dart';
 import 'package:online_shop/components/default_button.dart';
 import 'package:online_shop/components/form_error.dart';
 import 'package:online_shop/screens/forgot_password/forgot_password_screen.dart';
+import 'package:online_shop/screens/login_success/login_success_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -57,6 +58,10 @@ class _SignInFormState extends State<SignInForm> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
+                  if (errors.isEmpty) {
+                    Navigator.of(context)
+                        .pushNamed(LoginSuccessScreen.routeName);
+                  }
                 }
                 print(email);
                 print(password);
@@ -74,7 +79,8 @@ class _SignInFormState extends State<SignInForm> {
           setState(() {
             errors.remove(kNullPasswordError);
           });
-        } else if (value.length >= 8 && errors.contains(kShortPasswordError)) {
+        } else if (value.isEmpty ||
+            value.length >= 8 && errors.contains(kShortPasswordError)) {
           setState(() {
             errors.remove(kShortPasswordError);
           });
@@ -110,8 +116,9 @@ class _SignInFormState extends State<SignInForm> {
           setState(() {
             errors.remove(kEmailNullError);
           });
-        } else if (kemailValidatorRegex.hasMatch(value) &&
-            errors.contains(kInvalidEmailError)) {
+        } else if (value.isEmpty ||
+            kemailValidatorRegex.hasMatch(value) &&
+                errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.remove(kInvalidEmailError);
           });
