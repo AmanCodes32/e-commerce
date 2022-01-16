@@ -14,8 +14,17 @@ const kAnimationDuration = Duration(milliseconds: 200);
 //form error
 final RegExp kemailValidatorRegex =
     RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+final RegExp kNameValidatorRegex = RegExp(r"^[A-Z][a-zA-Z]+$");
+final RegExp kPhoneNumberValidatorRegex = RegExp(
+    r"((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)d{6}");
 const String kEmailNullError = "Please enter your email";
 const String kInvalidEmailError = "Please enter valid email";
 const String kNullPasswordError = "Please enter your password";
 const String kShortPasswordError = "Password is too short";
 const String kMatchPassError = "Passwords don't match";
+const String kNullFirstNameError = "Please enter your first name";
+const String kInvalidFirstNameError = "Please enter valid first name";
+const String kInvalidLastNameError = "Please enter valid last name";
+const String kNullPhoneNumberError = "Please enter your phone number";
+const String kInvalidPhoneNumberError = "Please enter valid phone number";
+const String kNullAddress = 'Please enter your address';
