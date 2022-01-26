@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:online_shop/components/custom_suffix_icon.dart';
 import 'package:online_shop/components/default_button.dart';
 import 'package:online_shop/components/form_error.dart';
-import 'package:online_shop/screens/sign_up/complete_profile_screen.dart';
+import 'package:online_shop/screens/complete_profile/complete_profile_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
