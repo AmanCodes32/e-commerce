@@ -17,14 +17,7 @@ class Body extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: SizeConfig.screenHeight! * 0.04),
-              Text(
-                "Welcome Back",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: getPropotionateScreenWidth(28),
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              Text("Welcome Back", style: headingStyle),
               const Text(
                 "Sign in with your email and password\nor continue with social media",
                 textAlign: TextAlign.center,
